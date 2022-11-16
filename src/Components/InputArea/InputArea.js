@@ -6,7 +6,6 @@ import "./InputArea.css";
 
 const InputArea = () => {
   const dispatch = useDispatch();
-  const [isUpdating, setIsUpdating] = useState(false);
   const [task, setTask] = useState("");
   const { Item } = useSelector((store) => store.Item);
   useEffect(() => {
