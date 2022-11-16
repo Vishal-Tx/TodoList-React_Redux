@@ -1,0 +1,13 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.container {
+  width: 450px;
+  min-height: 400px;
+  background-color: rgb(149, 52, 198);
+  border-radius: 5px;
+}

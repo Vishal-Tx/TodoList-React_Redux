@@ -1,0 +1,36 @@
+.item {
+  color: white;
+  padding: 20px 10px;
+  margin: 10px 10px;
+  background-color: #a773d8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+
+.item:hover {
+  background-color: #8a2be2;
+}
+
+.item button {
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin: 0 5px;
+  padding: 0;
+}
+
+.item button:hover {
+  color: black;
+}
+
+.item-text {
+  margin: 0;
+  font-size: 18px;
+}
+.done-text {
+  color: rgb(213, 209, 209);
+  text-decoration: line-through 2px;
+}
