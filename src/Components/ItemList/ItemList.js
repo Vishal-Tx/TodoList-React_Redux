@@ -5,7 +5,6 @@ import "./ItemList.css";
 
 const ItemList = () => {
   const { ItemList } = useSelector((store) => store.Items);
-  console.log("ItemList", ItemList);
   return !ItemList.length ? (
     <div className="default-Items">
       <ul className="list">

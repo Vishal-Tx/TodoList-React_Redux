@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clear } from "../../Features/Item/ItemSlice";
-import { AddItem, UpdateItem } from "../../Features/Items/ItemsSlice";
+// import { clear } from "../../Features/Item/ItemSlice";
+import { AddItem, UpdateItems, clear } from "../../Features/Items/ItemsSlice";
 import "./InputArea.css";
 
 const InputArea = () => {
   const dispatch = useDispatch();
   const [task, setTask] = useState("");
-  const { Item } = useSelector((store) => store.Item);
+  const { Item } = useSelector((store) => store.Items);
   useEffect(() => {
     if (Item) {
       setTask(Item.item);
@@ -19,10 +19,9 @@ const InputArea = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("upTask", task);
     if (Item) {
       const { index } = Item;
-      dispatch(UpdateItem({ task, index }), dispatch(clear()));
+      dispatch(UpdateItems({ task, index }), dispatch(clear()));
     } else {
       dispatch(AddItem(task));
     }

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { update } from "../../../Features/Item/ItemSlice";
+// import { update } from "../../../Features/Item/ItemSlice";
 import "./Item.css";
 import { MdDelete } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
-import { DeleteItem } from "../../../Features/Items/ItemsSlice";
+import { DeleteItem, UpdateItem } from "../../../Features/Items/ItemsSlice";
 
 const Item = ({ item, index }) => {
   const dispatch = useDispatch();
   const [toggleDone, setToggleDone] = useState(false);
   const handleUpdate = () => {
-    dispatch(update({ item, index }));
+    dispatch(UpdateItem({ item, index }));
   };
 
   const handleDelete = () => {

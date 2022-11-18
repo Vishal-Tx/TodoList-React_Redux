@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   ItemList: [],
+  Item: null,
 };
 
 const ItemsSlice = createSlice({
@@ -9,23 +10,27 @@ const ItemsSlice = createSlice({
   initialState,
   reducers: {
     AddItem: (state, action) => {
-      // console.log("action", action.payload);
       state.ItemList = [...state.ItemList, action.payload];
-      // console.log("state.ItemList", state.ItemList);
     },
     DeleteItem: (state, action) => {
-      console.log("deleteAction", action);
       state.ItemList = state.ItemList.filter(
         (item, index) => index !== action.payload
       );
     },
-    UpdateItem: (state, action) => {
-      console.log("updateaction", action.payload);
+    UpdateItems: (state, action) => {
       state.ItemList = state.ItemList.map((Item, id) =>
         id === action.payload.index ? action.payload.task : Item
       );
     },
+
+    UpdateItem: (state, action) => {
+      state.Item = action.payload;
+    },
+    clear: (state, action) => {
+      state.Item = null;
+    },
   },
 });
-export const { AddItem, DeleteItem, UpdateItem } = ItemsSlice.actions;
+export const { AddItem, DeleteItem, UpdateItems, UpdateItem, clear } =
+  ItemsSlice.actions;
 export default ItemsSlice.reducer;
